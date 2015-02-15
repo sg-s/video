@@ -6,11 +6,11 @@ if ( ! empty($_POST["url"])){
 	$cmd = 'LC_ALL=en_US.UTF-8 /usr/local/bin/youtube-dl -o' . escapeshellarg('%(id)s.%(ext)s') . ' ' . escapeshellarg($url) . ' 2>&1 ';
 	// echo($cmd);
 	exec($cmd, $output, $ret);
-	echo 'Output : ';
-	var_export($output);
-	echo "\nReturn : ";
-	var_export($ret);
-	echo "<div id=\"ok\">DONE!</div>";
+	// echo 'Output : ';
+	// var_export($output);
+	// echo "\nReturn : ";
+	// var_export($ret);
+	// echo "<div id=\"ok\">DONE!</div>";
 } else {
 }
 

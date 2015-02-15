@@ -1,0 +1,9 @@
+RewriteCond %{QUERY_STRING} only=styles
+RewriteRule ^load.php - [QSA,E=content_type:text/css]
+
+RewriteCond %{QUERY_STRING} only=scripts
+RewriteRule ^load.php - [QSA,E=content_type:text/javascript]
+
+<FilesMatch "load\.php">
+        Header set Content-type %{content_type}e
+</FilesMatch>

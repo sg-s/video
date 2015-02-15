@@ -27,12 +27,6 @@ If you see an error saying about permissions being denied, you have to
 chmod 777 uploads
 ```
 
-# Known Issues
+# Credits
 
-using 
-
-```
-youtube-dl -x -k 
-```
-
-doesn't work because paths aren't set correctly, and PHP doesn't know where `ffprobe` is. 
+Now also strips a MP3 from the video, with this [fix](https://github.com/rg3/youtube-dl/issues/1742)

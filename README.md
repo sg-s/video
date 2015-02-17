@@ -21,10 +21,22 @@ and hack away.
 
 #Troubleshooting
 
+If something isn't working, uncomment these lines in `index.php` to get a verbose output:
+
+```php
+    // echo($vrl);
+    // echo($cmd);
+    exec($cmd, $output, $ret);
+    // echo 'Output : ';
+    // var_export($output);
+    // echo "\nReturn : ";
+
+```
+
 If you see an error saying about permissions being denied, you have to 
 
 ```
-chmod 777 uploads
+chmod 777 video
 ```
 
 # Credits

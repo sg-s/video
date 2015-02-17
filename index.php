@@ -4,13 +4,21 @@ ini_set('include_path', '/usr/local/bin');
 if ( ! empty($_POST["url"])){
     $url = $_POST["url"];
 	$cmd = 'LC_ALL=en_US.UTF-8 /usr/local/bin/youtube-dl -x -k -o' . escapeshellarg('%(id)s.%(ext)s') . ' ' . escapeshellarg($url) . ' 2>&1 ';
+    $pos = strpos($url, "?")+3;
+    $vrl = substr($url, $pos, -1);  
+    $vrl .= ".mp4";
+    $vrl = "./".$vrl;
+    $arl = substr($url, $pos, -1);
+    $arl .= ".m4a";  
+    $arl = "./".$arl;
+    // echo($vrl);
 	// echo($cmd);
-	// exec($cmd, $output, $ret);
+	exec($cmd, $output, $ret);
 	// echo 'Output : ';
 	// var_export($output);
 	// echo "\nReturn : ";
 	// var_export($ret);
-	echo "<div id=\"ok\">DONE!</div>";
+	echo "<div id=\"ok\">DONE! Download: <a href = $vrl>Video</a>  <a href = $arl>Audio</a></div>";
 } else {
 }
 

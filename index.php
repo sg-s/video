@@ -5,10 +5,10 @@ if ( ! empty($_POST["url"])){
     $url = $_POST["url"];
 	$cmd = 'LC_ALL=en_US.UTF-8 /usr/local/bin/youtube-dl -x -k -o' . escapeshellarg('%(id)s.%(ext)s') . ' ' . escapeshellarg($url) . ' 2>&1 ';
     $pos = strpos($url, "?")+3;
-    $vrl = substr($url, $pos, -1);  
+    $vrl = substr($url, $pos, 0);  
     $vrl .= ".mp4";
     $vrl = "./".$vrl;
-    $arl = substr($url, $pos, -1);
+    $arl = substr($url, $pos, 0);
     $arl .= ".m4a";  
     $arl = "./".$arl;
     // echo($vrl);
